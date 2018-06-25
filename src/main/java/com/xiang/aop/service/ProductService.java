@@ -15,9 +15,6 @@ import javax.annotation.Resource;
 @Service
 public class ProductService {
 
-    @Resource
-    private AuthService authService;
-
     @AdminOnly
     public void insert(Product product) {
 
