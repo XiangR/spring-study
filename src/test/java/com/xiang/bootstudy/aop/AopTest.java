@@ -3,9 +3,12 @@ package com.xiang.bootstudy.aop;
 import com.xiang.aop.security.CurrentUserHandler;
 import com.xiang.aop.service.ProductService;
 import com.xiang.bootstudy.BaseApplicationTests;
+import org.junit.Assert;
 import org.junit.Test;
 
 import javax.annotation.Resource;
+
+import static org.junit.Assert.fail;
 
 /**
  * Created by xiangrui on 2018/6/25.
@@ -29,9 +32,22 @@ public class AopTest extends BaseApplicationTests {
     }
 
     @Test
+    public void insertTest2() {
+
+        try {
+            CurrentUserHandler.set("tom");
+            productService.delete(1);
+            fail("没有成功检测到 -> operation not allow");
+        } catch (RuntimeException e) {
+            Assert.assertTrue(e.getMessage().equals("operation not allow"));
+        }
+    }
+
+    @Test
     public void deleteTest() {
 
         CurrentUserHandler.set("admin");
         productService.delete(1);
     }
+
 }
