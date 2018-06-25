@@ -4,6 +4,8 @@ import com.xiang.aop.anno.AdminOnly;
 import com.xiang.aop.entity.Product;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 /**
  * Created by xiangrui on 2018/6/25.
  *

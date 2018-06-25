@@ -97,3 +97,13 @@ node_modules
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+service/src/main/resources/config.properties
+service/src/main/resources/disconf.properties
+service/src/main/resources/dubbo.local.properties
+
+disconf
+
+dao/src/test/resources/generator.properties
+
+ReidTest.java
